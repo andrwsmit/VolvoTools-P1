@@ -799,7 +799,7 @@ void readFlash(std::unique_ptr<j2534::J2534> j2534, common::CarPlatform carPlatf
     public:
         CLIReaderProvider(common::CarPlatform platform, uint32_t id,
                           uint32_t s, size_t sz)
-            : ReaderParametersProviderBase(platform, id, "", std::make_unique<flasher::SBLProviderCommon>())
+            : ReaderParametersProviderBase(platform, id, "me9_p1", std::make_unique<flasher::SBLProviderCommon>())
             , _range{ s, sz } {}
         flasher::ReadRanges getReadRanges() const override { return {_range}; }
     private:
